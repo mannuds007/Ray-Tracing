@@ -19,38 +19,29 @@ This project implements a simple ray tracer in C++ that renders 3D scenes with v
 
 Vectors are fundamental in ray tracing for representing directions, positions, and colors.
 
-- **Dot Product**: Measures the cosine of the angle between two vectors, used for lighting calculations.
-  \[
-  \mathbf{v}_1 \cdot \mathbf{v}_2 = v_{1x}v_{2x} + v_{1y}v_{2y} + v_{1z}v_{2z}
-  \]
+- **Addition and Subtraction**:  
+  \[v1 + v2 = (v1x + v2x, v1y + v2y, v1z + v2z)\]  
+  \[v1 - v2 = (v1x - v2x, v1y - v2y, v1z - v2z)\]
 
-- **Cross Product**: Produces a vector perpendicular to two given vectors, used for calculating normals.
-  \[
-  \mathbf{v}_1 \times \mathbf{v}_2 = (v_{1y}v_{2z} - v_{1z}v_{2y}, v_{1z}v_{2x} - v_{1x}v_{2z}, v_{1x}v_{2y} - v_{1y}v_{2x})
-  \]
+- **Dot Product**: Measures the cosine of the angle between two vectors, used for lighting calculations.  
+  \[v1 · v2 = v1x * v2x + v1y * v2y + v1z * v2z\]
 
-- **Normalization**: Converts a vector to a unit vector, preserving its direction.
-  \[
-  \mathbf{\hat{v}} = \frac{\mathbf{v}}{|\mathbf{v}|} = \frac{\mathbf{v}}{\sqrt{v_x^2 + v_y^2 + v_z^2}}
-  \]
+- **Cross Product**: Produces a vector perpendicular to two given vectors, used for calculating normals.  
+  \[v1 × v2 = (v1y * v2z - v1z * v2y, v1z * v2x - v1x * v2z, v1x * v2y - v1y * v2x)\]
+
+- **Normalization**: Converts a vector to a unit vector, preserving its direction.  
+  \[v̂ = v / |v| = v / sqrt(vx^2 + vy^2 + vz^2)\]
 
 ### Ray-Sphere Intersection
 
 The equation to find the intersection of a ray with a sphere:
 
-\[
-\text{Ray:} \quad \mathbf{P} = \mathbf{O} + t\mathbf{D}
-\]
+1. **Ray Equation**: P = O + t * D  
+2. **Sphere Equation**: |P - C|^2 = R^2  
 
-\[
-\text{Sphere:} \quad |\mathbf{P} - \mathbf{C}|^2 = R^2
-\]
+Combining these equations gives a quadratic in `t`:
 
-Combining these equations, we get a quadratic in \(t\):
-
-\[
-t^2 (\mathbf{D} \cdot \mathbf{D}) + 2t (\mathbf{O} - \mathbf{C}) \cdot \mathbf{D} + (\mathbf{O} - \mathbf{C}) \cdot (\mathbf{O} - \mathbf{C}) - R^2 = 0
-\]
+`t^2 * (D · D) + 2 * t * ((O - C) · D) + ((O - C) · (O - C) - R^2) = 0`
 
 ### Ray-Cube Intersection
 
@@ -58,17 +49,13 @@ To find the intersection of a ray with a cube, we check the intersection with ea
 
 ### Reflection and Refraction
 
-- **Reflection**: Calculated using the reflection formula:
-  \[
-  \mathbf{R} = \mathbf{I} - 2(\mathbf{I} \cdot \mathbf{N})\mathbf{N}
-  \]
-  where \(\mathbf{I}\) is the incident vector, and \(\mathbf{N}\) is the normal vector at the intersection point.
+- **Reflection**:  
+  `R = I - 2 * (I · N) * N`  
+  where `I` is the incident vector, and `N` is the normal vector at the intersection point.
 
-- **Refraction**: Calculated using Snell's law, taking into account the change in refractive index:
-  \[
-  \mathbf{R} = \eta \mathbf{I} + (\eta \cos \theta_i - \cos \theta_t)\mathbf{N}
-  \]
-  where \(\eta = \frac{n_1}{n_2}\) is the relative refractive index, \(\theta_i\) is the incident angle, and \(\theta_t\) is the transmitted angle.
+- **Refraction**: Calculated using Snell's law, taking into account the change in refractive index:  
+  `R = η * I + (η * cosθi - cosθt) * N`  
+  where `η = n1 / n2` is the relative refractive index, `θi` is the incident angle, and `θt` is the transmitted angle.
 
 ### Depth of Field
 
