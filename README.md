@@ -15,22 +15,6 @@ This project implements a simple ray tracer in C++ that renders 3D scenes with v
 
 ## Mathematics Used
 
-### Vector Operations
-
-Vectors are fundamental in ray tracing for representing directions, positions, and colors.
-
-- **Addition and Subtraction**:  
-  \[v1 + v2 = (v1x + v2x, v1y + v2y, v1z + v2z)\]  
-  \[v1 - v2 = (v1x - v2x, v1y - v2y, v1z - v2z)\]
-
-- **Dot Product**: Measures the cosine of the angle between two vectors, used for lighting calculations.  
-  \[v1 · v2 = v1x * v2x + v1y * v2y + v1z * v2z\]
-
-- **Cross Product**: Produces a vector perpendicular to two given vectors, used for calculating normals.  
-  \[v1 × v2 = (v1y * v2z - v1z * v2y, v1z * v2x - v1x * v2z, v1x * v2y - v1y * v2x)\]
-
-- **Normalization**: Converts a vector to a unit vector, preserving its direction.  
-  \[v̂ = v / |v| = v / sqrt(vx^2 + vy^2 + vz^2)\]
 
 ### Ray-Sphere Intersection
 
