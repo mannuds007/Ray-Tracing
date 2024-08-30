@@ -1,7 +1,3 @@
-Here is a `README.md` file for your ray tracer project, including descriptions of the mathematics used, depth of field, animation, and instructions on how to run the automated file:
-
----
-
 # Ray Tracer Project
 
 ## Overview
