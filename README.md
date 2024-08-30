@@ -41,11 +41,8 @@ To find the intersection of a ray with a cube, we check the intersection with ea
   `R = η * I + (η * cosθi - cosθt) * N`  
   where `η = n1 / n2` is the relative refractive index, `θi` is the incident angle, and `θt` is the transmitted angle.
 
-Here’s how you can format the README with the mathematical equations using Markdown and LaTeX syntax:
 
----
-
-## 4. Diffuse Lighting
+### Diffuse Lighting
 
 To compute the intensity of diffuse lighting, we use the Lambertian reflectance model, which states that the amount of light diffused from a surface is proportional to the cosine of the angle between the light direction and the surface normal.
 
@@ -62,7 +59,7 @@ Where:
 
 This formula ensures that only light that strikes the surface at an angle greater than 90 degrees contributes to the diffuse reflection, providing realistic shading.
 
-## 5. Specular Lighting
+###. Specular Lighting
 
 The specular component represents the bright spot of light that appears on shiny objects when illuminated. This is calculated using the Blinn-Phong reflection model.
 
@@ -80,7 +77,7 @@ Where:
 
 This equation models how light reflects off a shiny surface and is seen as a bright spot or highlight.
 
-## 6. Camera Ray Generation
+### Camera Ray Generation
 
 To generate rays from the camera through each pixel, the direction of the ray is calculated from the camera's origin to the pixel's position on the image plane. This ensures that each ray accurately corresponds to the pixel it represents.
 
@@ -117,7 +114,7 @@ Where:
 - \(\mathbf{o}\) is the camera origin.
 - \(\mathbf{p}\) is the original pixel position.
 
-To simulate the depth of field, multiple rays are cast from the camera origin with slight offsets, converging towards the focal point \(\mathbf{r}_{\text{focus}}\). These rays contribute to the final pixel color, with objects in focus being sharply rendered and those out of focus appearing blurred.
+To simulate the depth of field, multiple rays are cast from the camera origin with slight offsets, converging towards the focal point $$\(\mathbf{r}_{\text{focus}}\)$$. These rays contribute to the final pixel color, with objects in focus being sharply rendered and those out of focus appearing blurred.
 
 
 ### Animation
