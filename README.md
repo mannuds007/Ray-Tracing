@@ -54,8 +54,8 @@ $$
 
 Where:
 
-- \(\mathbf{L}\) is the direction of the light source.
-- \(\mathbf{N}\) is the surface normal at the point of intersection.
+- $$\(\mathbf{L}\)$$ is the direction of the light source.
+- $$\(\mathbf{N}\)$$ is the surface normal at the point of intersection.
 
 This formula ensures that only light that strikes the surface at an angle greater than 90 degrees contributes to the diffuse reflection, providing realistic shading.
 
@@ -71,9 +71,9 @@ $$
 
 Where:
 
-- \(\mathbf{R}\) is the reflected light direction.
-- \(\mathbf{D}\) is the view (or camera) direction.
-- \(\text{exp}\) is the specular exponent that controls the shininess of the surface. Higher values create smaller, sharper highlights, resembling a more polished surface.
+- $$\(\mathbf{R}\)$$ is the reflected light direction.
+- $$\(\mathbf{D}\)$$ is the view (or camera) direction.
+- $$\(\text{exp}\)$$ is the specular exponent that controls the shininess of the surface. Higher values create smaller, sharper highlights, resembling a more polished surface.
 
 This equation models how light reflects off a shiny surface and is seen as a bright spot or highlight.
 
@@ -89,11 +89,11 @@ $$
 
 Where:
 
-- \(\mathbf{p}\) is the pixel position on the image plane.
-- \(\mathbf{o}\) is the camera origin.
-- \(\mathbf{D}\) is the normalized direction vector from the camera origin through the pixel position.
+- $$\(\mathbf{p}\)$$ is the pixel position on the image plane.
+- $$\(\mathbf{o}\)$$ is the camera origin.
+- $$\(\mathbf{D}\)$$ is the normalized direction vector from the camera origin through the pixel position.
 
-This normalization step ensures that the direction vector \(\mathbf{D}\) is a unit vector, which is essential for consistent ray tracing calculations.
+This normalization step ensures that the direction vector $$\(\mathbf{D}\)$$ is a unit vector, which is essential for consistent ray tracing calculations.
 
 ### Depth of Field
 
@@ -109,10 +109,10 @@ $$
 
 Where:
 
-- \(\mathbf{r}_{\text{focus}}\) is the focal point, calculated as a point along the original ray direction where the camera is focused.
-- \(f\) is the focal distance, which determines how far from the camera the scene will be in sharp focus.
-- \(\mathbf{o}\) is the camera origin.
-- \(\mathbf{p}\) is the original pixel position.
+- $$\(\mathbf{r}_{\text{focus}}\)$$ is the focal point, calculated as a point along the original ray direction where the camera is focused.
+- $$\(f\)$$ is the focal distance, which determines how far from the camera the scene will be in sharp focus.
+- $$\(\mathbf{o}\)$$ is the camera origin.
+- $$\(\mathbf{p}\)$$ is the original pixel position.
 
 To simulate the depth of field, multiple rays are cast from the camera origin with slight offsets, converging towards the focal point $$\(\mathbf{r}_{\text{focus}}\)$$. These rays contribute to the final pixel color, with objects in focus being sharply rendered and those out of focus appearing blurred.
 
