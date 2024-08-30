@@ -41,19 +41,19 @@ To find the intersection of a ray with a cube, we check the intersection with ea
   `R = η * I + (η * cosθi - cosθt) * N`  
   where `η = n1 / n2` is the relative refractive index, `θi` is the incident angle, and `θt` is the transmitted angle.
 
-Here's how you can add the explanations for Diffuse Lighting, Specular Lighting, Camera Ray Generation, and Depth of Field equations to your README:
+Here’s how you can format the README with the mathematical equations using Markdown and LaTeX syntax:
 
 ---
 
-### Diffuse Lighting
+## 4. Diffuse Lighting
 
 To compute the intensity of diffuse lighting, we use the Lambertian reflectance model, which states that the amount of light diffused from a surface is proportional to the cosine of the angle between the light direction and the surface normal.
 
 ### Diffuse Lighting Intensity:
 
-\[
+$$
 I_{\text{diffuse}} = \max(0, \mathbf{L} \cdot \mathbf{N})
-\]
+$$
 
 Where:
 
@@ -62,15 +62,15 @@ Where:
 
 This formula ensures that only light that strikes the surface at an angle greater than 90 degrees contributes to the diffuse reflection, providing realistic shading.
 
-### Specular Lighting
+## 5. Specular Lighting
 
 The specular component represents the bright spot of light that appears on shiny objects when illuminated. This is calculated using the Blinn-Phong reflection model.
 
 ### Specular Lighting Intensity:
 
-\[
+$$
 I_{\text{specular}} = \text{pow}(\max(0, -\mathbf{R} \cdot \mathbf{D}), \text{exp})
-\]
+$$
 
 Where:
 
@@ -80,15 +80,15 @@ Where:
 
 This equation models how light reflects off a shiny surface and is seen as a bright spot or highlight.
 
-### Camera Ray Generation
+## 6. Camera Ray Generation
 
 To generate rays from the camera through each pixel, the direction of the ray is calculated from the camera's origin to the pixel's position on the image plane. This ensures that each ray accurately corresponds to the pixel it represents.
 
-#### Camera Ray Direction:
+### Camera Ray Direction:
 
-\[
+$$
 \mathbf{D} = \frac{\mathbf{p} - \mathbf{o}}{\|\mathbf{p} - \mathbf{o}\|}
-\]
+$$
 
 Where:
 
@@ -106,9 +106,9 @@ To achieve depth of field in ray tracing, you can use the following formula to g
 
 ### Depth of Field Equation:
 
-\[
+$$
 \mathbf{r}_{\text{focus}} = \mathbf{o} + f \cdot (\mathbf{p} - \mathbf{o})
-\]
+$$
 
 Where:
 
@@ -118,6 +118,7 @@ Where:
 - \(\mathbf{p}\) is the original pixel position.
 
 To simulate the depth of field, multiple rays are cast from the camera origin with slight offsets, converging towards the focal point \(\mathbf{r}_{\text{focus}}\). These rays contribute to the final pixel color, with objects in focus being sharply rendered and those out of focus appearing blurred.
+
 
 ### Animation
 
