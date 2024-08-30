@@ -94,7 +94,10 @@ To automate the building and execution of the ray tracer, a Python script (`buil
     ```
 
 ### Automating with Python
-1. **Navigate to the build directory**:
- ```bash
-    python automate.py
-    ```
+
+To run the automation script, use Python to execute the commands in sequence:
+
+
+```bash
+python automate.py
+```
