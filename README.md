@@ -6,12 +6,10 @@ This project implements a simple ray tracer in C++ that renders 3D scenes with v
 
 ## Features
 
-- **Vector Operations**: Basic operations like addition, subtraction, dot product, cross product, and normalization.
 - **Materials**: Different materials with properties like diffuse color, specular exponent, and refractive index.
 - **Shapes**: Spheres and cubes, with the possibility to extend to other shapes.
 - **Ray Tracing**: Calculates intersections of rays with objects, handles reflections, refractions, and shadows.
 - **Depth of Field**: Simulates camera focus by adjusting the sharpness of objects based on their distance from the focal point.
-- **Animation**: Generates frames over time to create animations.
 
 ## Mathematics Used
 
@@ -116,10 +114,6 @@ Where:
 
 To simulate the depth of field, multiple rays are cast from the camera origin with slight offsets, converging towards the focal point $$\(\mathbf{r}_{\text{focus}}\)$$. These rays contribute to the final pixel color, with objects in focus being sharply rendered and those out of focus appearing blurred.
 
-
-### Animation
-
-Animation is created by updating the scene for each frame and rendering the frames in sequence. Objects can be moved, rotated, or scaled over time to create animated effects.
 
 ## How to Run the Automated File
 
